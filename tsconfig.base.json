@@ -1,0 +1,28 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "rootDir": ".",
+    "sourceMap": true,
+    "declaration": false,
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "importHelpers": true,
+    "target": "es2015",
+    "module": "esnext",
+    "lib": ["es2017", "dom"],
+    "skipLibCheck": true,
+    "skipDefaultLibCheck": true,
+    "baseUrl": ".",
+    "paths": {
+      "@path-imports/nglib": ["libs/nglib/src/index.ts"],
+      "@path-imports/react-rollup-lib": ["libs/react-rollup-lib/src/index.ts"],
+      "@path-imports/react-rollup-lib-2": [
+        "libs/react-rollup-lib-2/src/index.ts"
+      ],
+      "@path-imports/react-vite-lib": ["libs/react-vite-lib/src/index.ts"],
+      "@path-imports/react-vite-lib-2": ["libs/react-vite-lib-2/src/index.ts"]
+    }
+  },
+  "exclude": ["node_modules", "tmp"]
+}
