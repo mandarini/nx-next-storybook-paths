@@ -1,11 +1,11 @@
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-import styles from './app.module.css';
+import { ReactRollupLib } from '@path-imports/react-rollup-lib';
 
 import NxWelcome from './nx-welcome';
 
 export function App() {
   return (
     <>
+      <ReactRollupLib />
       <NxWelcome title="react-webpack" />
 
       <div />
