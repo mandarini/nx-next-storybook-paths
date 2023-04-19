@@ -1,60 +1,45 @@
-# Nextjs cannot resolve paths
+# Bundlers and compilers
 
-UPDATE: Fixed by [storybookjs/storybook/pull/22160](https://github.com/storybookjs/storybook/pull/22160)!
+## For apps
 
-## Setup
+### SWC
 
-1. Install dependencies
+All works as expected. React app using `webpack` and `swc` as compiler, builds Storybook as expected.
 
-```bash
-yarn
-```
+### Babel
 
-2. Try to build Next.js Storybook
+All works as expected. React app using `webpack` and `babel` as compiler, builds Storybook as expected.
 
-```bash
-npx nx build-storybook next-app
-```
+## For libraries
 
-Fails:
+### Rollup + Babel + `@storybook/react-webpack5`
 
-```
- >  NX   Module not found: Error: Can't resolve '@path-imports/react-rollup-lib' in '/Users/katerina/Projects/nrwl/test_nx_workspaces/path-imports/apps/next-app/components/one'
-```
+Library building with `rollup` and `babel` as compiler gets error when serving and building with `@storybook/react-webpack5`.
 
-## What this repo contains
-
-- `apps/next-app` - Next.js app
-- `apps/ngapp` - Angular app
-- `apps/react-vite` - React app using Vite
-- `apps/react-webpack` - React app using Webpack
-
-These apps import libraries from `libs` folder, using the import paths specified in [`tsconfig.base.json`](tsconfig.base.json).
-
-All the other apps can build Storybook successfully, except the Next.js app.
-
-### Test the other libs
+To reproduce:
 
 ```bash
-npx nx build-storybook ngapp
-npx nx build-storybook react-vite
-npx nx build-storybook react-webpack
+npx nx build-storybook react-babel
 ```
 
-## Works in Storybook v6.5
-
-```
-git checkout test/sb-65
+```bash
+ >  NX   Module not found: Error: Can't resolve 'core-js/modules/es.object.assign.js' in '/Users/katerina/Projects/nrwl/test_nx_workspaces/path-imports/libs/react-babel/src/lib'
 ```
 
-then install
+Works when I use `@storybook/react-vite` instead of `@storybook/react-webpack5`.
 
-```
-yarn
+### Rollup + SWC + `@storybook/react-webpack5`
+
+Library building with `rollup` and `swc` as compiler gets error when serving and building with `@storybook/react-webpack5`.
+
+To reproduce:
+
+```bash
+npx nx build-storybook react-swc
 ```
 
-then build next-app Storybook
+```bash
+>  NX   Module not found: Error: Can't resolve 'core-js/modules/es.object.assign.js'in '/Users/katerina/Projects/nrwl/test_nx_workspaces/path-imports/libs/react-swc/srclib'
+```
 
-```
-npx nx build-storybook next-app
-```
+Works when I use `@storybook/react-vite` instead of `@storybook/react-webpack5`.

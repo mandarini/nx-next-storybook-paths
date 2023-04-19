@@ -1,10 +1,6 @@
 const config = {
   stories: ['../src/app/**/*.stories.@(js|jsx|ts|tsx|mdx)'],
-  addons: [
-    '@storybook/addon-essentials',
-    '@nrwl/react/plugins/storybook',
-    'storybook-addon-swc',
-  ],
+  addons: ['@storybook/addon-essentials', '@nrwl/react/plugins/storybook'],
   framework: {
     name: '@storybook/react-webpack5',
     options: {},
