@@ -1,5 +1,7 @@
 # Nextjs cannot resolve paths
 
+UPDATE: Fixed by [storybookjs/storybook/pull/22160](https://github.com/storybookjs/storybook/pull/22160)!
+
 ## Setup
 
 1. Install dependencies
