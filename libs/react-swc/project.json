@@ -7,20 +7,28 @@
   "targets": {
     "lint": {
       "executor": "@nrwl/linter:eslint",
-      "outputs": ["{options.outputFile}"],
+      "outputs": [
+        "{options.outputFile}"
+      ],
       "options": {
-        "lintFilePatterns": ["libs/react-swc/**/*.{ts,tsx,js,jsx}"]
+        "lintFilePatterns": [
+          "libs/react-swc/**/*.{ts,tsx,js,jsx}"
+        ]
       }
     },
     "build": {
       "executor": "@nrwl/rollup:rollup",
-      "outputs": ["{options.outputPath}"],
+      "outputs": [
+        "{options.outputPath}"
+      ],
       "options": {
         "outputPath": "dist/libs/react-swc",
         "tsConfig": "libs/react-swc/tsconfig.lib.json",
         "project": "libs/react-swc/package.json",
         "entryFile": "libs/react-swc/src/index.ts",
-        "external": ["react/jsx-runtime"],
+        "external": [
+          "react/jsx-runtime"
+        ],
         "rollupConfig": "@nrwl/react/plugins/bundle-rollup",
         "compiler": "swc",
         "assets": [
@@ -30,6 +38,45 @@
             "output": "."
           }
         ]
+      }
+    },
+    "storybook": {
+      "executor": "@nrwl/storybook:storybook",
+      "options": {
+        "port": 4400,
+        "configDir": "libs/react-swc/.storybook"
+      },
+      "configurations": {
+        "ci": {
+          "quiet": true
+        }
+      }
+    },
+    "build-storybook": {
+      "executor": "@nrwl/storybook:build",
+      "outputs": [
+        "{options.outputDir}"
+      ],
+      "options": {
+        "outputDir": "dist/storybook/react-swc",
+        "configDir": "libs/react-swc/.storybook"
+      },
+      "configurations": {
+        "ci": {
+          "quiet": true
+        }
+      }
+    },
+    "static-storybook": {
+      "executor": "@nrwl/web:file-server",
+      "options": {
+        "buildTarget": "react-swc:build-storybook",
+        "staticFilePath": "dist/storybook/react-swc"
+      },
+      "configurations": {
+        "ci": {
+          "buildTarget": "react-swc:build-storybook:ci"
+        }
       }
     }
   }

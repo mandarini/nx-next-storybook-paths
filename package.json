@@ -53,6 +53,7 @@
     "@storybook/angular": "^7.0.5",
     "@storybook/core-server": "^7.0.5",
     "@storybook/nextjs": "^7.0.5",
+    "@storybook/react": "^7.0.6",
     "@storybook/react-vite": "^7.0.5",
     "@storybook/react-webpack5": "^7.0.5",
     "@svgr/rollup": "^6.1.2",
