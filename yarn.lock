@@ -13839,7 +13839,7 @@ store2@^2.14.2:
   resolved "https://registry.yarnpkg.com/store2/-/store2-2.14.2.tgz#56138d200f9fe5f582ad63bc2704dbc0e4a45068"
   integrity sha512-siT1RiqlfQnGqgT/YzXVUNsom9S0H1OX+dpdGN1xkyYATo4I6sep5NmsRD/40s3IIOvlCq6akxkqG82urIZW1w==
 
-storybook-addon-swc@^1.1.7:
+storybook-addon-swc@^1.2.0:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/storybook-addon-swc/-/storybook-addon-swc-1.2.0.tgz#a407acf18f4b1de4304fbc26f93aeda797fb3cb3"
   integrity sha512-PEpxhAH+407KTcVDC7uUH4S26qtuBDC/JlZI3NqFYu0Tm2uCBf56On+13lK4iE3Iz8FORl4aSXo2RricJ/UhPQ==
