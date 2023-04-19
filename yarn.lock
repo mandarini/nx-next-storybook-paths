@@ -1468,7 +1468,7 @@
   dependencies:
     regenerator-runtime "^0.13.11"
 
-"@babel/runtime@^7.12.5", "@babel/runtime@^7.14.8", "@babel/runtime@^7.17.8", "@babel/runtime@^7.20.7", "@babel/runtime@^7.21.0", "@babel/runtime@^7.7.2", "@babel/runtime@^7.7.6", "@babel/runtime@^7.8.4":
+"@babel/runtime@^7.12.5", "@babel/runtime@^7.14.8", "@babel/runtime@^7.17.2", "@babel/runtime@^7.17.8", "@babel/runtime@^7.20.7", "@babel/runtime@^7.21.0", "@babel/runtime@^7.7.2", "@babel/runtime@^7.7.6", "@babel/runtime@^7.8.4":
   version "7.21.0"
   resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.21.0.tgz#5b55c9d394e5fcf304909a8b00c07dc217b56673"
   integrity sha512-xwII0//EObnq89Ji5AKYQaRYiW/nZ3llSv29d49IuxPhKbtJoLP+9QUUZ4nVragQVtaVGeZrpB+ZtG/Pdy/POw==
@@ -13839,6 +13839,15 @@ store2@^2.14.2:
   resolved "https://registry.yarnpkg.com/store2/-/store2-2.14.2.tgz#56138d200f9fe5f582ad63bc2704dbc0e4a45068"
   integrity sha512-siT1RiqlfQnGqgT/YzXVUNsom9S0H1OX+dpdGN1xkyYATo4I6sep5NmsRD/40s3IIOvlCq6akxkqG82urIZW1w==
 
+storybook-addon-swc@^1.1.7:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/storybook-addon-swc/-/storybook-addon-swc-1.2.0.tgz#a407acf18f4b1de4304fbc26f93aeda797fb3cb3"
+  integrity sha512-PEpxhAH+407KTcVDC7uUH4S26qtuBDC/JlZI3NqFYu0Tm2uCBf56On+13lK4iE3Iz8FORl4aSXo2RricJ/UhPQ==
+  dependencies:
+    "@babel/runtime" "^7.17.2"
+    deepmerge "^4.2.2"
+    swc-loader "^0.1.15"
+
 stream-shift@^1.0.0:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/stream-shift/-/stream-shift-1.0.1.tgz#d7088281559ab2778424279b0877da3c392d5a3d"
@@ -14082,6 +14091,11 @@ swc-loader@0.1.15:
   integrity sha512-cn1WPIeQJvXM4bbo3OwdEIapsQ4uUGOfyFj0h2+2+brT0k76DCGnZXDE2KmcqTd2JSQ+b61z2NPMib7eEwMYYw==
   dependencies:
     loader-utils "^2.0.0"
+
+swc-loader@^0.1.15:
+  version "0.1.16"
+  resolved "https://registry.yarnpkg.com/swc-loader/-/swc-loader-0.1.16.tgz#4c718d698e518f3e6ceb9f7872c1855cdb187066"
+  integrity sha512-NKIm8aJjK/z/yfzk+v7YGwJMjBKaLaUs9ZKI2zoaIGKAjtkwjO92ZLI0fiTZuwzRqVLQl/29fBdSgFCBzquR0w==
 
 symbol-observable@4.0.0:
   version "4.0.0"
