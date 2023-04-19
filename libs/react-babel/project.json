@@ -7,20 +7,28 @@
   "targets": {
     "lint": {
       "executor": "@nrwl/linter:eslint",
-      "outputs": ["{options.outputFile}"],
+      "outputs": [
+        "{options.outputFile}"
+      ],
       "options": {
-        "lintFilePatterns": ["libs/react-babel/**/*.{ts,tsx,js,jsx}"]
+        "lintFilePatterns": [
+          "libs/react-babel/**/*.{ts,tsx,js,jsx}"
+        ]
       }
     },
     "build": {
       "executor": "@nrwl/rollup:rollup",
-      "outputs": ["{options.outputPath}"],
+      "outputs": [
+        "{options.outputPath}"
+      ],
       "options": {
         "outputPath": "dist/libs/react-babel",
         "tsConfig": "libs/react-babel/tsconfig.lib.json",
         "project": "libs/react-babel/package.json",
         "entryFile": "libs/react-babel/src/index.ts",
-        "external": ["react/jsx-runtime"],
+        "external": [
+          "react/jsx-runtime"
+        ],
         "rollupConfig": "@nrwl/react/plugins/bundle-rollup",
         "compiler": "babel",
         "assets": [
@@ -30,6 +38,45 @@
             "output": "."
           }
         ]
+      }
+    },
+    "storybook": {
+      "executor": "@nrwl/storybook:storybook",
+      "options": {
+        "port": 4400,
+        "configDir": "libs/react-babel/.storybook"
+      },
+      "configurations": {
+        "ci": {
+          "quiet": true
+        }
+      }
+    },
+    "build-storybook": {
+      "executor": "@nrwl/storybook:build",
+      "outputs": [
+        "{options.outputDir}"
+      ],
+      "options": {
+        "outputDir": "dist/storybook/react-babel",
+        "configDir": "libs/react-babel/.storybook"
+      },
+      "configurations": {
+        "ci": {
+          "quiet": true
+        }
+      }
+    },
+    "static-storybook": {
+      "executor": "@nrwl/web:file-server",
+      "options": {
+        "buildTarget": "react-babel:build-storybook",
+        "staticFilePath": "dist/storybook/react-babel"
+      },
+      "configurations": {
+        "ci": {
+          "buildTarget": "react-babel:build-storybook:ci"
+        }
       }
     }
   }
