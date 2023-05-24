@@ -5,10 +5,8 @@
   "projectType": "application",
   "targets": {
     "build": {
-      "executor": "@nrwl/vite:build",
-      "outputs": [
-        "{options.outputPath}"
-      ],
+      "executor": "@nx/vite:build",
+      "outputs": ["{options.outputPath}"],
       "defaultConfiguration": "production",
       "options": {
         "outputPath": "dist/apps/react-vite"
@@ -23,7 +21,7 @@
       }
     },
     "serve": {
-      "executor": "@nrwl/vite:dev-server",
+      "executor": "@nx/vite:dev-server",
       "defaultConfiguration": "development",
       "options": {
         "buildTarget": "react-vite:build"
@@ -40,7 +38,7 @@
       }
     },
     "preview": {
-      "executor": "@nrwl/vite:preview-server",
+      "executor": "@nx/vite:preview-server",
       "defaultConfiguration": "development",
       "options": {
         "buildTarget": "react-vite:build"
@@ -55,34 +53,28 @@
       }
     },
     "test": {
-      "executor": "@nrwl/vite:test",
-      "outputs": [
-        "coverage/apps/react-vite"
-      ],
+      "executor": "@nx/vite:test",
+      "outputs": ["coverage/apps/react-vite"],
       "options": {
         "passWithNoTests": true,
         "reportsDirectory": "../../coverage/apps/react-vite"
       }
     },
     "lint": {
-      "executor": "@nrwl/linter:eslint",
-      "outputs": [
-        "{options.outputFile}"
-      ],
+      "executor": "@nx/linter:eslint",
+      "outputs": ["{options.outputFile}"],
       "options": {
-        "lintFilePatterns": [
-          "apps/react-vite/**/*.{ts,tsx,js,jsx}"
-        ]
+        "lintFilePatterns": ["apps/react-vite/**/*.{ts,tsx,js,jsx}"]
       }
     },
     "serve-static": {
-      "executor": "@nrwl/web:file-server",
+      "executor": "@nx/web:file-server",
       "options": {
         "buildTarget": "react-vite:build"
       }
     },
     "storybook": {
-      "executor": "@nrwl/storybook:storybook",
+      "executor": "@nx/storybook:storybook",
       "options": {
         "port": 4400,
         "configDir": "apps/react-vite/.storybook"
@@ -94,10 +86,8 @@
       }
     },
     "build-storybook": {
-      "executor": "@nrwl/storybook:build",
-      "outputs": [
-        "{options.outputDir}"
-      ],
+      "executor": "@nx/storybook:build",
+      "outputs": ["{options.outputDir}"],
       "options": {
         "outputDir": "dist/storybook/react-vite",
         "configDir": "apps/react-vite/.storybook"
@@ -109,7 +99,7 @@
       }
     },
     "static-storybook": {
-      "executor": "@nrwl/web:file-server",
+      "executor": "@nx/web:file-server",
       "options": {
         "buildTarget": "react-vite:build-storybook",
         "staticFilePath": "dist/storybook/react-vite"

@@ -1,16 +1,17 @@
 const path = require('path');
-
 const config = {
   stories: ['../components/**/*.stories.@(js|jsx|ts|tsx|mdx)'],
   addons: ['@storybook/addon-essentials'],
   framework: {
     name: '@storybook/nextjs',
     options: {
-      nextConfigPath: path.resolve(__dirname, '../next.config.js'),
-    },
+      nextConfigPath: '../next.config.js'
+    }
   },
+  docs: {
+    autodocs: true
+  }
 };
-
 export default config;
 
 // To customize your webpack configuration you can use the webpackFinal field.

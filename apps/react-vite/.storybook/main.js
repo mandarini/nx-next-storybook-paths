@@ -9,8 +9,10 @@ const config = {
       },
     },
   },
+  docs: {
+    autodocs: true,
+  },
 };
-
 export default config;
 
 // To customize your Vite configuration you can use the viteFinal field.

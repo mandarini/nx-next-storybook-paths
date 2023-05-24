@@ -3,10 +3,12 @@ const config = {
   addons: ['@storybook/addon-essentials'],
   framework: {
     name: '@storybook/angular',
-    options: {},
+    options: {}
   },
+  docs: {
+    autodocs: true
+  }
 };
-
 export default config;
 
 // To customize your webpack configuration you can use the webpackFinal field.
