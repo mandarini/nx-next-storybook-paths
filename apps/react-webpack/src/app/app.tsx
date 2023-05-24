@@ -7,7 +7,6 @@ export function App() {
     <>
       <ReactRollupLib />
       <NxWelcome title="react-webpack" />
-
       <div />
     </>
   );

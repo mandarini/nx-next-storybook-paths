@@ -1,0 +1,16 @@
+{
+  "name": "react-lib-none",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/react-lib-none/src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "lint": {
+      "executor": "@nx/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/react-lib-none/**/*.{ts,tsx,js,jsx}"]
+      }
+    }
+  }
+}
