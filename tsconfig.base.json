@@ -17,6 +17,7 @@
     "paths": {
       "@path-imports/jslib": ["libs/jslib/src/index.ts"],
       "@path-imports/nglib": ["libs/nglib/src/index.ts"],
+      "@path-imports/react-nobundler": ["libs/react-nobundler/src/index.ts"],
       "@path-imports/react-rollup-lib": ["libs/react-rollup-lib/src/index.ts"],
       "@path-imports/react-rollup-lib-2": [
         "libs/react-rollup-lib-2/src/index.ts"
